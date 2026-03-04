@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JarinRaksa Oy | Rakennuspalvelut Vaasa</title>
+  <meta name="description" content="JarinRaksa Oy tekee huoneistoremontit ja pienrakennukset Vaasassa. Pyydä tarjous, vastaamme nopeasti.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JarinRaksa Oy | Rakennuspalvelut Vaasa">
+  <meta property="og:description" content="Huoneistoremontit ja pienet piharakennukset Vaasassa. Pyydä tarjous.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.ibb.co/CsKz87rd/Gemini-Generated-Image-x80a40x80a40x80a-1-1.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JarinRaksa Oy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Aleksanterinkatu 20",
+      "addressLocality": "Vaasa",
+      "addressCountry": "FI"
+    },
+    "telephone": "040 0450902",
+    "email": "gabriel.mansnerus@gmail.com",
+    "url": "https://jarinraksa.fi"
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGAATIO -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container" aria-label="Päänavigaatio">
+      <a href="#" class="nav-logo" aria-label="JarinRaksa Oy – etusivu">JarinRaksa Oy</a>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#palvelut" class="nav-link">Palvelut</a></li>
+        <li><a href="#referenssit" class="nav-link">Työt</a></li>
+        <li><a href="#tietoa" class="nav-link">Tietoa</a></li>
+        <li><a href="#sijainti" class="nav-link">Sijainti</a></li>
+        <li><a href="#yhteydenotto" class="nav-link">Yhteystiedot</a></li>
+      </ul>
+
+      <a href="#yhteydenotto" class="btn btn-primary nav-cta">Pyydä tarjous</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="nav-links">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobiilivalikko -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#palvelut" class="mobile-link">Palvelut</a></li>
+        <li><a href="#referenssit" class="mobile-link">Työt</a></li>
+        <li><a href="#tietoa" class="mobile-link">Tietoa</a></li>
+        <li><a href="#sijainti" class="mobile-link">Sijainti</a></li>
+        <li><a href="#yhteydenotto" class="mobile-link">Yhteystiedot</a></li>
+        <li><a href="#yhteydenotto" class="btn btn-primary mobile-cta">Pyydä tarjous</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-label="Etusivu">
+      <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1768321916027-d0f69289227f?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHw1fHxob21lJTIwcmVub3ZhdGlvbiUyMGludGVyaW9yfGVufDB8MHx8fDE3NzI2MjY3Mjh8MA&ixlib=rb-4.1.0&w=1920&q=85&auto=format&fit=crop"
+          alt="Remontointikohde rakennusvaiheessa"
+          title="Photo by Olek Buzunov on Unsplash"
+          class="hero-img"
+          loading="eager"
+        >
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content container">
+        <p class="hero-eyebrow reveal-left">Vaasa</p>
+        <h1 class="hero-title" id="hero-title">Remontti valmiiksi ilman yllätyksiä</h1>
+        <p class="hero-sub reveal-left">Huoneistoremontit ja piharakennukset Vaasassa. Kiinteät hinnat jo ennen töiden aloitusta.</p>
+        <div class="hero-actions reveal-left">
+          <a href="#yhteydenotto" class="btn btn-primary btn-lg">Pyydä tarjous</a>
+          <a href="#referenssit" class="btn btn-outline btn-lg">Katso töitä</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS-PALKKI -->
+    <section class="stats-bar" aria-label="Luvut lyhyesti">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="80" data-suffix="+">0</span>
+          <span class="stat-label">valmistunutta kohdetta</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10" data-suffix=" v">0</span>
+          <span class="stat-label">vuoden kokemus rakennusalalta</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="4" data-suffix=".9★">0</span>
+          <span class="stat-label">Google-arvosana</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100" data-suffix="%">0</span>
+          <span class="stat-label">kiinteähintaisia tarjouksia</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALVELUT -->
+    <section class="section palvelut" id="palvelut" aria-label="Palvelut">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Mitä teemme</span>
+          <h2>Kattavat remonttipalvelut Vaasassa</h2>
+          <p class="section-desc">Toteutamme Vaasassa keittiö-, kylpyhuone- ja pintaremontit sekä pienrakentamisen. Annamme jokaisesta kohteesta kiinteän hinnan ennen töiden aloitusta.</p>
+        </div>
+
+        <div class="palvelut-grid">
+          <article class="palvelu-kortti reveal-left" tabindex="0">
+            <div class="palvelu-kuva-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1763665814965-b5c4b3547908?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwxMXx8YmF0aHJvb20lMjB0aWxlJTIwd29ya3xlbnwwfDB8fHwxNzcyNjI2NzI5fDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+                alt="Kylpyhuoneremontti"
+                title="Photo by Sergej Karpow on Unsplash"
+                loading="lazy"
+                class="palvelu-kuva"
+              >
+            </div>
+            <div class="palvelu-sisalto">
+              <div class="palvelu-ikoni" aria-hidden="true">🛁</div>
+              <h3>Kylpyhuoneremontti</h3>
+              <p>Vedeneristys, kaakelointi, kalusteiden vaihto ja putkiliitokset. Toteutamme remontin avaimet käteen -periaatteella.</p>
+            </div>
+          </article>
+
+          <article class="palvelu-kortti reveal-left" tabindex="0">
+            <div class="palvelu-kuva-wrap">
+              <img
+                src="https://i.ibb.co/CsKz87rd/Gemini-Generated-Image-x80a40x80a40x80a-1-1.jpg"
+                alt="Keittiöremontti uusilla kaapeilla ja tasolla"
+                loading="lazy"
+                class="palvelu-kuva"
+                style="object-fit: cover; object-position: center center;"
+              >
+            </div>
+            <div class="palvelu-sisalto">
+              <div class="palvelu-ikoni" aria-hidden="true">🍳</div>
+              <h3>Keittiöremontti</h3>
+              <p>Kalusteiden vaihto, työtasojen uusinta, kaakelointi ja sähkötyöt alihankkijoineen.</p>
+            </div>
+          </article>
+
+          <article class="palvelu-kortti reveal-left" tabindex="0">
+            <div class="palvelu-kuva-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1759238136859-b6fe007fe126?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwyfHxjb3p5JTIwcmVub3ZhdGVkJTIwbGl2aW5nJTIwcm9vbXxlbnwwfDB8fHwxNzcyNjI2NzMwfDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+                alt="Remontoitu olohuone"
+                title="Photo by Franco Debartolo on Unsplash"
+                loading="lazy"
+                class="palvelu-kuva"
+              >
+            </div>
+            <div class="palvelu-sisalto">
+              <div class="palvelu-ikoni" aria-hidden="true">🏠</div>
+              <h3>Pintaremontti</h3>
+              <p>Lattiat, seinät, katot kuntoon. Parketin, laminaatin tai laatan asennus ja tasoitetyöt.</p>
+            </div>
+          </article>
+
+          <article class="palvelu-kortti reveal-left" tabindex="0">
+            <div class="palvelu-kuva-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1645025612394-5a9e20186808?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHw1fHxnYXJkZW4lMjBzaGVkJTIwd29vZHxlbnwwfDB8fHwxNzcyNjI2NzI5fDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+                alt="Piharakennus puutarhassa"
+                title="Photo by Brent Jenkins on Unsplash"
+                loading="lazy"
+                class="palvelu-kuva"
+              >
+            </div>
+            <div class="palvelu-sisalto">
+              <div class="palvelu-ikoni" aria-hidden="true">🔨</div>
+              <h3>Piharakennukset</h3>
+              <p>Varastot, autotallit ja grillikatokset perustuksista harjaan. Rakennamme puurakenteisena tai elementtipohjaisena.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIAALIVAIHTOEHDOT -->
+    <section class="section materiaalit" id="materiaalit" aria-label="Materiaalivaihtoehdot">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Pintamateriaalit</span>
+          <h2>Valitse lattia ja pintamateriaalit</h2>
+          <p class="section-desc">Valitsemme materiaalit yhdessä projektin alussa. Hinnat varmistetaan materiaalivalintojen jälkeen.</p>
+        </div>
+        <div class="materiaalit-grid">
+          <div class="materiaali-kortti reveal-left" tabindex="0">
+            <div class="materiaali-bg materiaali-parketti" aria-hidden="true"></div>
+            <h3>Lautaparketti</h3>
+            <p>Massiivipuu tai pinnoitettu. Kestää vuosikymmeniä ja on hiottavissa uuteen kuntoon.</p>
+          </div>
+          <div class="materiaali-kortti reveal-left" tabindex="0">
+            <div class="materiaali-bg materiaali-laminaatti" aria-hidden="true"></div>
+            <h3>Laminaatti</h3>
+            <p>Kustannustehokas ja helppohoitoinen vaihtoehto. Saatavana laaja väri- ja kuviovalikoima asennettuna.</p>
+          </div>
+          <div class="materiaali-kortti reveal-left" tabindex="0">
+            <div class="materiaali-bg materiaali-laatta" aria-hidden="true"></div>
+            <h3>Laatta ja mosaiikki</h3>
+            <p>Kylpyhuoneisiin ja keittiöihin. Asennus tarpeen mukaan joko vesieristyksellä tai ilman.</p>
+          </div>
+          <div class="materiaali-kortti reveal-left" tabindex="0">
+            <div class="materiaali-bg materiaali-vinyyli" aria-hidden="true"></div>
+            <h3>Vinyylilankku</h3>
+            <p>Vedenkestävä ja lämmin jalalle. Oikein asennettuna sopii erinomaisesti myös märkätiloihin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENSSIGALLERIA -->
+    <section class="section referenssit" id="referenssit" aria-label="Valmiit kohteet">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Valmiit kohteet</span>
+          <h2>Aiemmat työmme Vaasassa</h2>
+        </div>
+        <div class="galleria-grid">
+          <figure class="galleria-item reveal-left">
+            <img
+              src="https://i.ibb.co/CsKz87rd/Gemini-Generated-Image-x80a40x80a40x80a-1-1.jpg"
+              alt="Keittiöremontti Hervannassa uusilla kalusteilla ja kalanruotoparkettilattia"
+              loading="lazy"
+              style="object-fit: cover; object-position: center center;"
+            >
+            <figcaption>
+              <span class="galleria-caption-text">Keittiöremontti, Hervanta</span>
+            </figcaption>
+          </figure>
+          <figure class="galleria-item reveal-left">
+            <img
+              src="https://i.ibb.co/1Wwx0q9/Gemini-Generated-Image-x3xamlx3xamlx3xa-1-1.jpg"
+              alt="Kylpyhuoneremontti Kalveassa 2025 kivipintaisilla seinälaatoilla ja pyöreällä peilillä"
+              loading="lazy"
+              style="object-fit: cover; object-position: center center;"
+            >
+            <figcaption>
+              <span class="galleria-caption-text">Kylpyhuoneremontti, Kalvea 2025</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIETOA MEISTÄ -->
+    <section class="section tietoa" id="tietoa" aria-label="Tietoa yrityksestä">
+      <div class="container tietoa-layout">
+        <div class="tietoa-kuva-wrap reveal-left">
+          <img
+            src="https://images.unsplash.com/photo-1759238136859-b6fe007fe126?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwyfHxjb3V5JTIwcmVub3ZhdGVkJTIwbGl2aW5nJTIwcm9vbXxlbnwwfDB8fHwxNzcyNjI2NzMwfDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+            alt="Valmis remonttikohde"
+            title="Photo by Franco Debartolo on Unsplash"
+            loading="lazy"
+            class="tietoa-kuva"
+          >
+        </div>
+        <div class="tietoa-teksti reveal-left">
+          <span class="section-label">Tietoa meistä</span>
+          <h2>JarinRaksa Oy – remontteja Vaasassa</h2>
+          <p>Toteutamme huoneistoremontit ja piharakennukset Vaasassa sekä lähikunnissa. Jokaisesta kohteesta annamme kiinteän hintatarjouksen, joten tiedät kustannukset jo ennen töiden aloitusta.</p>
+          <p>Yrittäjä Jari vastaa tarjouspyyntöihin yleensä saman päivän aikana. Kohdekatselmus on maksuton.</p>
+          <div class="tietoa-faktit">
+            <div class="fakta-rivi">
+              <span class="fakta-ikoni" aria-hidden="true">📍</span>
+              <span>Teirinkatu 6, 65350 Vaasa</span>
+            </div>
+            <div class="fakta-rivi">
+              <span class="fakta-ikoni" aria-hidden="true">📞</span>
+              <a href="tel:0400450902">040 0450902</a>
+            </div>
+            <div class="fakta-rivi">
+              <span class="fakta-ikoni" aria-hidden="true">✉️</span>
+              <a href="mailto:gabriel.mansnerus@gmail.com">gabriel.mansnerus@gmail.com</a>
+            </div>
+          </div>
+          <a href="#yhteydenotto" class="btn btn-primary">Pyydä tarjous</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKUU-OSIO -->
+    <section class="section takuu" id="takuu" aria-label="Palvelulupaukset">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Palvelulupaukset</span>
+          <h2>Näin varmistamme onnistuneen remontin</h2>
+        </div>
+        <div class="takuu-grid">
+          <div class="takuu-kortti reveal-left" tabindex="0">
+            <div class="takuu-ikoni" aria-hidden="true">📋</div>
+            <h3>Yksityiskohtainen tarjous</h3>
+            <p>Jokaisesta kohteesta annetaan eritelty, kirjallinen tarjous ennen töiden alkua. Sovittu hinta ei nouse ilman erillistä sopimusta.</p>
+          </div>
+          <div class="takuu-kortti reveal-left" tabindex="0">
+            <div class="takuu-ikoni" aria-hidden="true">🔧</div>
+            <h3>Kahden vuoden työtakuu</h3>
+            <p>Noudatamme rakennusalan lakisääteistä virhetakuuta, joka on 2 vuotta. Takuukorjaukset teemme veloituksetta.</p>
+          </div>
+          <div class="takuu-kortti reveal-left" tabindex="0">
+            <div class="takuu-ikoni" aria-hidden="true">🗓️</div>
+            <h3>Tarkka aikataulu</h3>
+            <p>Projektin aikataulu sovitaan kirjallisesti ja pidämme siitä kiinni. Mahdollisista viivästymisistä ilmoitetaan aina etukäteen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOGLE-ARVOSTELUT -->
+    <section class="section arvostelut-osio" id="arvostelut" aria-label="Asiakkaiden arvostelut">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Asiakkaat kertovat</span>
+          <h2>Mitä mieltä aiemmat asiakkaamme ovat</h2>
+        </div>
+
+        <div class="arvostelu-kortit">
+          <article class="arvostelu-kortti reveal-left" tabindex="0">
+            <div class="tahdet" aria-label="5 tähteä">★★★★★</div>
+            <p>"Kylpyhuone uusittiin kolmessa viikossa. Hinta ja siisteys pitivät täsmälleen sovitun mukaisesti, ja jälki on erinomainen."</p>
+            <footer class="arvostelu-footer">
+              <strong>Minna K.</strong>
+              <span>Yksityisasiakas, Vaasa</span>
+            </footer>
+          </article>
+          <article class="arvostelu-kortti reveal-left" tabindex="0">
+            <div class="tahdet" aria-label="5 tähteä">★★★★★</div>
+            <p>"Keittiöremontti sujui aikataulussa moitteettomasti. Jari kävi katsomassa kohteen ja antoi realistisen hinnan heti alusta alkaen."</p>
+            <footer class="arvostelu-footer">
+              <strong>Timo V.</strong>
+              <span>Yksityisasiakas, Mustasaari</span>
+            </footer>
+          </article>
+          <article class="arvostelu-kortti reveal-left" tabindex="0">
+            <div class="tahdet" aria-label="5 tähteä">★★★★★</div>
+            <p>"Pihavarasto nousi perustuksista kattoon kahdessa viikossa. Urakkasopimus oli selkeä, eikä ylimääräisiä laskuja tullut."</p>
+            <footer class="arvostelu-footer">
+              <strong>Leena S.</strong>
+              <span>Yksityisasiakas, Vaasa</span>
+            </footer>
+          </article>
+        </div>
+
+        <div class="google-reviews-wrap reveal-left">
+          <!-- reviews-generated -->
+          <div id="reviews-section" data-place-id="">
+            <!-- arvostelut päivitetään automaattisesti -->
+            <p style="text-align:center;color:#888;padding:1.5rem 0;">⭐ Google-arvostelut ladataan pian</p>
+          </div>
+          <!-- /reviews-generated -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SIJAINTI -->
+    <section class="section sijainti" id="sijainti" aria-label="Sijainti">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Sijainti</span>
+          <h2>Toimialueemme Vaasassa</h2>
+        </div>
+        <div class="sijainti-layout">
+          <div class="kartta-wrap reveal-left">
+            <iframe
+              src="https://maps.google.com/maps?q=Teirinkatu%206%2065350%20Vaasa&output=embed"
+              width="100%"
+              height="350"
+              style="border:0; border-radius:12px;"
+              allowfullscreen
+              loading="lazy"
+              title="JarinRaksa Oy sijainti kartalla"
+              aria-label="Google Maps: Teirinkatu 6, Vaasa"
+            ></iframe>
+          </div>
+          <div class="sijainti-tiedot reveal-left">
+            <div class="sijainti-rivi">
+              <span class="sijainti-ikoni" aria-hidden="true">📍</span>
+              <div>
+                <strong>Osoite</strong>
+                <p>Teirinkatu 6<br>65350 Vaasa</p>
+              </div>
+            </div>
+            <div class="sijainti-rivi">
+              <span class="sijainti-ikoni" aria-hidden="true">📞</span>
+              <div>
+                <strong>Puhelin</strong>
+                <p><a href="tel:0400450902">040 0450902</a></p>
+              </div>
+            </div>
+            <div class="sijainti-rivi">
+              <span class="sijainti-ikoni" aria-hidden="true">✉️</span>
+              <div>
+                <strong>Sähköposti</strong>
+                <p><a href="mailto:gabriel.mansnerus@gmail.com">gabriel.mansnerus@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="sijainti-rivi">
+              <span class="sijainti-ikoni" aria-hidden="true">🗺️</span>
+              <div>
+                <strong>Palvelemme</strong>
+                <p>Vaasassa ja lähikunnissa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YHTEYDENOTTOLOMAKE -->
+    <section class="section yhteydenotto" id="yhteydenotto" aria-label="Yhteydenottolomake">
+      <div class="container">
+        <div class="section-header reveal-left">
+          <span class="section-label">Ota yhteyttä</span>
+          <h2>Pyydä maksuton tarjous</h2>
+          <p class="section-desc">Täytä lomake alla. Vastaamme tarjouspyyntöihin yleensä saman päivän aikana ja sovimme maksuttoman kohdekatselmuksen.</p>
+        </div>
+
+        <div class="lomake-wrap">
+          <form
+            class="yhteydenotto-form"
+            id="contact-form" action="https://formsubmit.co/gabriel.mansnerus@gmail.com"
+            method="POST"
+            novalidate
+            aria-label="Tarjouspyyntölomake"
+          >
+  <input type="hidden" name="_subject" value="Yhteydenotto – JarinRaksa Oy">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+            <div class="form-group floating-group">
+              <input type="text" id="nimi" name="nimi" class="form-input" required autocomplete="name" placeholder=" " aria-required="true">
+              <label for="nimi" class="floating-label">Nimi *</label>
+            </div>
+
+            <div class="form-group floating-group">
+              <input type="tel" id="puhelin" name="puhelin" class="form-input" autocomplete="tel" placeholder=" ">
+              <label for="puhelin" class="floating-label">Puhelinnumero</label>
+            </div>
+
+            <div class="form-group floating-group">
+              <input type="email" id="email" name="email" class="form-input" autocomplete="email" placeholder=" ">
+              <label for="email" class="floating-label">Sähköposti</label>
+            </div>
+
+            <div class="form-group floating-group">
+              <input type="text" id="kohde" name="kohde" class="form-input" placeholder=" ">
+              <label for="kohde" class="floating-label">Remonttikohde (esim. kylpyhuone, keittiö, piharakennus)</label>
+            </div>
+
+            <div class="form-group floating-group">
+              <textarea id="viesti" name="viesti" class="form-input form-textarea" rows="4" placeholder=" "></textarea>
+              <label for="viesti" class="floating-label">Tarkempi kuvaus työstä</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full" id="submit-btn">
+              <span class="btn-text">Lähetä tarjouspyyntö</span>
+              <span class="btn-spinner" aria-hidden="true" style="display:none;">⏳</span>
+            </button>
+
+            <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-layout">
+      <div class="footer-brand">
+        <span class="footer-logo">JarinRaksa Oy</span>
+        <p>Huoneistoremontit ja piharakennukset Vaasassa.</p>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Navigaatio</h3>
+        <ul role="list">
+          <li><a href="#palvelut">Palvelut</a></li>
+          <li><a href="#referenssit">Työt</a></li>
+          <li><a href="#tietoa">Tietoa</a></li>
+          <li><a href="#sijainti">Sijainti</a></li>
+          <li><a href="#yhteydenotto">Ota yhteyttä</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3 class="footer-heading">Yhteystiedot</h3>
+        <address>
+          <p>Teirinkatu 6, 65350 Vaasa</p>
+          <p><a href="tel:0400450902">040 0450902</a></p>
+          <p><a href="mailto:gabriel.mansnerus@gmail.com">gabriel.mansnerus@gmail.com</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 JarinRaksa Oy. Kaikki oikeudet pidätetään.</p>
+        <p>Kuvat: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

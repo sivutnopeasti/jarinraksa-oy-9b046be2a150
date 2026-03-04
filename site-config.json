@@ -1,0 +1,52 @@
+{
+  "site_id": "9b046be2a150",
+  "repo": "sivutnopeasti/jarinraksa-oy-9b046be2a150",
+  "company": "JarinRaksa Oy",
+  "email": "gabriel.mansnerus@gmail.com",
+  "place_id": "ChIJc1BGc6vYjkYR7JApFjQBkFw",
+  "issue_number": 56,
+  "images": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1768321916027-d0f69289227f?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHw1fHxob21lJTIwcmVub3ZhdGlvbiUyMGludGVyaW9yfGVufDB8MHx8fDE3NzI2MjY3Mjh8MA&ixlib=rb-4.1.0&w=1920&q=85&auto=format&fit=crop",
+      "alt": "Remontointikohde rakennusvaiheessa"
+    },
+    "image-1": {
+      "url": "https://images.unsplash.com/photo-1763665814965-b5c4b3547908?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwxMXx8YmF0aHJvb20lMjB0aWxlJTIwd29ya3xlbnwwfDB8fHwxNzcyNjI2NzI5fDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop",
+      "alt": "Kylpyhuoneremontti"
+    },
+    "image-2": {
+      "url": "https://i.ibb.co/CsKz87rd/Gemini-Generated-Image-x80a40x80a40x80a-1-1.jpg",
+      "alt": "Keittiöremontti uusilla kaapeilla ja tasolla"
+    },
+    "image-3": {
+      "url": "https://images.unsplash.com/photo-1759238136859-b6fe007fe126?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwyfHxjb3p5JTIwcmVub3ZhdGVkJTIwbGl2aW5nJTIwcm9vbXxlbnwwfDB8fHwxNzcyNjI2NzMwfDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop",
+      "alt": "Remontoitu olohuone"
+    },
+    "image-4": {
+      "url": "https://images.unsplash.com/photo-1645025612394-5a9e20186808?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHw1fHxnYXJkZW4lMjBzaGVkJTIwd29vZHxlbnwwfDB8fHwxNzcyNjI2NzI5fDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop",
+      "alt": "Piharakennus puutarhassa"
+    },
+    "image-5": {
+      "url": "https://i.ibb.co/CsKz87rd/Gemini-Generated-Image-x80a40x80a40x80a-1-1.jpg",
+      "alt": "Keittiöremontti Hervannassa uusilla kalusteilla ja kalanruotoparkettilattia"
+    },
+    "image-6": {
+      "url": "https://i.ibb.co/1Wwx0q9/Gemini-Generated-Image-x3xamlx3xamlx3xa-1-1.jpg",
+      "alt": "Kylpyhuoneremontti Kalveassa 2025 kivipintaisilla seinälaatoilla ja pyöreällä peilillä"
+    },
+    "image-7": {
+      "url": "https://images.unsplash.com/photo-1759238136859-b6fe007fe126?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwyfHxjb3V5JTIwcmVub3ZhdGVkJTIwbGl2aW5nJTIwcm9vbXxlbnwwfDB8fHwxNzcyNjI2NzMwfDA&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop",
+      "alt": "Valmis remonttikohde"
+    }
+  },
+  "texts": {
+    "h1": "Remontti valmiiksi ilman yllätyksiä",
+    "h2_1": "Kattavat remonttipalvelut Vaasassa",
+    "h2_2": "Valitse lattia ja pintamateriaalit",
+    "h2_3": "Aiemmat työmme Vaasassa",
+    "h2_4": "JarinRaksa Oy – remontteja Vaasassa",
+    "h2_5": "Näin varmistamme onnistuneen remontin",
+    "h2_6": "Mitä mieltä aiemmat asiakkaamme ovat",
+    "hero_p": "Huoneistoremontit ja piharakennukset Vaasassa. Kiinteät hinnat jo ennen töiden aloitusta."
+  }
+}

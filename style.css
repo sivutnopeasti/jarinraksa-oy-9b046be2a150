@@ -1,0 +1,1466 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #2C3E2D;
+  --color-primary-dark: #1a2618;
+  --color-primary-light: #3d5440;
+  --color-accent: #C8A96E;
+  --color-accent-dark: #a8854a;
+  --color-bg: #FAF8F5;
+  --color-bg-alt: #F1EDE6;
+  --color-bg-dark: #2C3E2D;
+  --color-text: #1C1C1A;
+  --color-text-muted: #5C5A55;
+  --color-text-light: #8A8880;
+  --color-white: #FFFFFF;
+  --color-border: #DDD8CF;
+
+  --font-heading: 'Libre Baskerville', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 8px rgba(44,62,45,0.08);
+  --shadow-md: 0 8px 24px rgba(44,62,45,0.12);
+  --shadow-lg: 0 20px 48px rgba(44,62,45,0.18);
+
+  --transition: 0.25s ease;
+  --transition-slow: 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ===== TYPOGRAFIA ===== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 700; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 700; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-xl);
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.section-desc {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 0.65rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Ripple */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: rippleAnim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ===== HEADER & NAVIGAATIO ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.site-header.scrolled {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 var(--space-md);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.nav-logo:hover,
+.nav-logo:focus-visible {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  transition: color var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+.nav-cta {
+  margin-left: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobiilivalikko */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--color-primary-dark);
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-lg);
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-link {
+  display: block;
+  padding: 0.85rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 1.05rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+.mobile-link:hover,
+.mobile-link:focus-visible {
+  color: var(--color-accent);
+  padding-left: 0.5rem;
+}
+
+.mobile-cta {
+  margin-top: var(--space-md);
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 38, 24, 0.85) 0%,
+    rgba(44, 62, 45, 0.65) 45%,
+    rgba(26, 38, 24, 0.80) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: var(--space-2xl);
+  max-width: 760px;
+}
+
+.hero-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  opacity: 0;
+  animation: fadeIn 0.5s 0.2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.hero-title {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+}
+
+/* Hero-kirjaimet */
+.hero-title .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: charDrop 0.45s forwards;
+}
+
+@keyframes charDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: var(--space-lg);
+  max-width: 560px;
+  opacity: 0;
+  animation: fadeIn 0.6s 0.8s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  opacity: 0;
+  animation: fadeIn 0.6s 1s forwards;
+}
+
+/* ===== STATS-PALKKI ===== */
+.stats-bar {
+  background: var(--color-primary-dark);
+  padding: var(--space-xl) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+  max-width: 130px;
+}
+
+/* ===== PALVELUT ===== */
+.palvelut {
+  background: var(--color-bg);
+}
+
+.palvelut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.palvelu-kortti {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  will-change: transform;
+}
+
+.palvelu-kortti:hover,
+.palvelu-kortti:focus-visible {
+  box-shadow: var(--shadow-lg);
+}
+
+.palvelu-kuva-wrap {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.palvelu-kuva {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s ease;
+  display: block;
+}
+
+.palvelu-kortti:hover .palvelu-kuva {
+  transform: scale(1.05);
+}
+
+.palvelu-sisalto {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+}
+
+.palvelu-ikoni {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.palvelu-sisalto h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.palvelu-sisalto p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ===== MATERIAALIVAIHTOEHDOT ===== */
+.materiaalit {
+  background: var(--color-bg-alt);
+}
+
+.materiaalit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.materiaali-kortti {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  padding-bottom: var(--space-md);
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  will-change: transform;
+}
+
+.materiaali-kortti:hover,
+.materiaali-kortti:focus-visible {
+  box-shadow: var(--shadow-lg);
+}
+
+.materiaali-bg {
+  height: 120px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.materiaali-parketti {
+  background: linear-gradient(135deg, #C9A96E 0%, #E8D5A3 45%, #B8914A 100%);
+}
+
+.materiaali-laminaatti {
+  background: linear-gradient(135deg, #8D7B6A 0%, #C4B49E 50%, #7A6858 100%);
+}
+
+.materiaali-laatta {
+  background: linear-gradient(135deg, #9DB4C0 0%, #D0E4EC 50%, #7B9EAE 100%);
+}
+
+.materiaali-vinyyli {
+  background: linear-gradient(135deg, #7A8C7D 0%, #B8C9BA 50%, #5C6E5F 100%);
+}
+
+.materiaali-kortti h3 {
+  padding: var(--space-sm) var(--space-sm) 0.35rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.materiaali-kortti p {
+  padding: 0 var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* ===== REFERENSSIGALLERIA ===== */
+.referenssit {
+  background: var(--color-bg);
+}
+
+.galleria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.galleria-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  transition: box-shadow var(--transition);
+}
+
+.galleria-item:hover,
+.galleria-item:focus-within {
+  box-shadow: var(--shadow-lg);
+}
+
+.galleria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.galleria-item:hover img,
+.galleria-item:focus-within img {
+  transform: scale(1.06);
+}
+
+.galleria-item figcaption {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 38, 24, 0.80) 0%,
+    rgba(26, 38, 24, 0.10) 55%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.galleria-item:hover figcaption,
+.galleria-item:focus-within figcaption {
+  opacity: 1;
+}
+
+.galleria-caption-text {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TIETOA MEISTÄ ===== */
+.tietoa {
+  background: var(--color-bg-alt);
+}
+
+.tietoa-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.tietoa-kuva-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.tietoa-kuva {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+
+.tietoa-teksti .section-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  text-align: left;
+}
+
+.tietoa-teksti h2 {
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.tietoa-teksti p {
+  color: var(--color-text-muted);
+}
+
+.tietoa-faktit {
+  margin: var(--space-md) 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fakta-rivi {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.fakta-ikoni {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.fakta-rivi a {
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.fakta-rivi a:hover,
+.fakta-rivi a:focus-visible {
+  color: var(--color-accent-dark);
+}
+
+/* ===== TAKUU ===== */
+.takuu {
+  background: var(--color-primary);
+}
+
+.takuu .section-label {
+  color: var(--color-accent);
+}
+
+.takuu .section-header h2 {
+  color: var(--color-white);
+}
+
+.takuu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.takuu-kortti {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  cursor: default;
+  will-change: transform;
+}
+
+.takuu-kortti:hover,
+.takuu-kortti:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-accent);
+}
+
+.takuu-ikoni {
+  font-size: 2.4rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+  display: block;
+}
+
+.takuu-kortti h3 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.takuu-kortti p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ===== ARVOSTELUT ===== */
+.arvostelut-osio {
+  background: var(--color-bg-alt);
+}
+
+.arvostelu-kortit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.arvostelu-kortti {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+  will-change: transform;
+}
+
+.arvostelu-kortti:hover,
+.arvostelu-kortti:focus-visible {
+  box-shadow: var(--shadow-md);
+}
+
+.tahdet {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.arvostelu-kortti p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.arvostelu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.arvostelu-footer strong {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.arvostelu-footer span {
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+}
+
+.google-reviews-wrap {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== SIJAINTI ===== */
+.sijainti {
+  background: var(--color-bg);
+}
+
+.sijainti-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.kartta-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.kartta-wrap iframe {
+  display: block;
+}
+
+.sijainti-tiedot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sijainti-rivi {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.sijainti-ikoni {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  line-height: 1;
+}
+
+.sijainti-rivi strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+}
+
+.sijainti-rivi p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.sijainti-rivi a {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.sijainti-rivi a:hover,
+.sijainti-rivi a:focus-visible {
+  color: var(--color-accent-dark);
+}
+
+/* ===== YHTEYDENOTTO ===== */
+.yhteydenotto {
+  background: var(--color-primary-dark);
+}
+
+.yhteydenotto .section-label {
+  color: var(--color-accent);
+}
+
+.yhteydenotto .section-header h2 {
+  color: var(--color-white);
+}
+
+.yhteydenotto .section-desc {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.lomake-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.yhteydenotto-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Floating label */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 1.45rem 1rem 0.55rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-white);
+  transition: border-color var(--transition), background var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.form-input::placeholder {
+  color: transparent;
+}
+
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-white);
+  -webkit-box-shadow: 0 0 0 1000px rgba(44, 62, 45, 0.9) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+  padding-top: 1.45rem;
+}
+
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transform-origin: left top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 2rem);
+}
+
+.form-textarea ~ .floating-label {
+  top: 1.4rem;
+  transform: none;
+}
+
+.form-input:focus ~ .floating-label,
+.form-input:not(:placeholder-shown) ~ .floating-label {
+  top: 0.45rem;
+  transform: scale(0.75);
+  color: var(--color-accent);
+}
+
+.form-textarea:focus ~ .floating-label,
+.form-textarea:not(:placeholder-shown) ~ .floating-label {
+  top: 0.3rem;
+  transform: scale(0.75);
+  color: var(--color-accent);
+}
+
+.form-status {
+  text-align: center;
+  font-size: 0.95rem;
+  min-height: 1.5rem;
+  transition: opacity var(--transition);
+}
+
+.form-status.success {
+  color: #7DC98F;
+}
+
+.form-status.error {
+  color: #E88080;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: var(--color-primary-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-2xl) 0 0;
+}
+
+.footer-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-contact p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+  margin-bottom: 0;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible,
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: var(--color-accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-md) 0;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Viivästetty sisääntulo korttiruudukoissa */
+.palvelut-grid .palvelu-kortti:nth-child(2) { transition-delay: 0.1s; }
+.palvelut-grid .palvelu-kortti:nth-child(3) { transition-delay: 0.2s; }
+.palvelut-grid .palvelu-kortti:nth-child(4) { transition-delay: 0.3s; }
+
+.takuu-grid .takuu-kortti:nth-child(2) { transition-delay: 0.12s; }
+.takuu-grid .takuu-kortti:nth-child(3) { transition-delay: 0.24s; }
+
+.arvostelu-kortit .arvostelu-kortti:nth-child(2) { transition-delay: 0.1s; }
+.arvostelu-kortit .arvostelu-kortti:nth-child(3) { transition-delay: 0.2s; }
+
+.materiaalit-grid .materiaali-kortti:nth-child(2) { transition-delay: 0.08s; }
+.materiaalit-grid .materiaali-kortti:nth-child(3) { transition-delay: 0.16s; }
+.materiaalit-grid .materiaali-kortti:nth-child(4) { transition-delay: 0.24s; }
+
+.galleria-grid .galleria-item:nth-child(2) { transition-delay: 0.12s; }
+
+/* ===== ACCESSIBILITY ===== */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 700;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Vähennetään animaatioita jos käyttäjä on niin asettanut */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== RESPONSIVE – TABLET ===== */
+@media (max-width: 1024px) {
+  .materiaalit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .tietoa-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .tietoa-kuva-wrap {
+    max-height: 420px;
+    overflow: hidden;
+  }
+
+  .sijainti-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== RESPONSIVE – MOBILE ===== */
+@media (max-width: 768px) {
+  :root {
+    --space-2xl: 3.5rem;
+    --space-xl: 2.5rem;
+    --space-lg: 2rem;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .palvelut-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galleria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arvostelu-kortit {
+    grid-template-columns: 1fr;
+  }
+
+  .takuu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materiaalit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content {
+    padding-top: 110px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stat-item {
+    padding: var(--space-sm);
+    background: rgba(255,255,255,0.04);
+    border-radius: var(--radius-sm);
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+/* ===== RESPONSIVE – PIENI MOBIILI ===== */
+@media (max-width: 480px) {
+  .materiaalit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+html { overflow-x: hidden; }
+.nav-menu { z-index: 999; }
+
+/* === Visuaaliset korjaukset === */
+/* ============================================
+   KORJAUKSET – lisää olemassa olevan style.css loppuun
+   ============================================ */
+
+/* 1. Hero h1 – mobiilissa liian suuri, korjataan font-size */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.4rem) !important;
+    line-height: 1.2 !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
+
+/* 2. Mobiilinavigaatio – opaque tausta jotta linkit eivät näy hero-kuvan päällä */
+.mobile-menu {
+  background-color: #2c3e2d; /* sama sävy kuin header – vaihda vastaamaan site-header taustaväriä */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1rem 0 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* 3. Varmistutaan että site-header on positioned jotta mobile-menu asettuu oikein */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 4. Desktop h1 – pienennetään hieman jotta mahtuu 1–2 riville siististi */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: clamp(2.8rem, 4vw, 3.5rem) !important;
+    max-width: 14ch;
+  }
+}
+
+/* 5. Hero content – estetään ylivuoto mobiilissa */
+.hero-content {
+  overflow: hidden;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* 6. Hero-painikkeet mobiilissa – täysi leveys jotta eivät leikkaannu */
+@media (max-width: 480px) {
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
